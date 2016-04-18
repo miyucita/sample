@@ -1,0 +1,159 @@
+﻿
+/*------------------------------------------------------------------
+    Product Page
+-------------------------------------------------------------------*/
+
+.product-page {
+    overflow: visible;
+    article {
+        width: 100%;
+        margin: 0 0 30px;
+        overflow: hidden;
+        border-radius:4px;
+        box-shadow:0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+        .news-img-block {
+            position: relative;
+            padding-right: 0;
+            padding-left:0;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .text-title {
+        margin: 40px 0 20px;
+        color: $darkGrayColor;
+        font-size: 1.267em;
+    }
+}
+
+.product-page {
+    article {
+        .img-block-head {
+            .price {
+                position:absolute;
+                bottom:10px;
+                right:10px;
+                padding: 10px 20px 5px;
+                overflow: hidden;
+                font-family: "Lato", sans-serif;
+                color: $whiteColor;
+                border-radius:4px;
+                background-color:rgba(189, 161, 127, 0.5);
+                i {
+                    font-size: 2em;
+                    font-style: normal;
+                }
+            }
+        }
+        .news-description-block {
+            position: relative;
+            padding: 0 80px 20px;
+            @include clearfix;
+            .btn {
+                display:block;
+                width:140px;
+                margin:20px 0;
+            }
+            .share {
+                position: absolute;
+                top: 10px;
+                left: 15px;
+                p {
+                    margin: 0;
+                    font: bold 0.857em 'Lato', sans-serif;
+                    color: $darkGrayColor;
+                    text-align: center;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    span {
+                        display: block;
+                        margin-bottom: 10px;
+                        color: $lightGrayColor;
+                        font-size: 2em;
+                    }
+                }
+                &:hover p span,
+                p.active {
+                    opacity: .6;
+                }
+                .share-links {
+                    display: none;
+                    margin: 20px 0;
+                    padding: 0;
+                    list-style: none;
+                    li {
+                        font-size: 2em;
+                        text-align: center;
+                        span{
+                            color: $defaultThemeColor;
+                        }
+                        a:hover {
+                            opacity:0.5;
+                           
+                        }
+                    }
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+        }   
+        h3 {
+            margin: 20px 0;
+            color: $lightGrayColor;
+            font-size: 1.143em;
+        }
+        p {
+            color: $lightGrayColor;
+            a {
+                display:inline-block;
+            }
+        }
+        ul {
+            margin: 30px 0;
+        }
+    }
+    
+    .description-block {
+        padding: 0 0 15px 30%;
+        line-height: 1.5;
+        p {
+            font-family: 'Lato', sans-serif;
+            margin-bottom:0;
+        }
+        a {
+            color: $darkGrayColor;
+            font-size: 1em;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    .popular-tags {
+        padding: 0;
+        li {
+            float: left;
+            display: block;
+            margin: 0 5px 5px 0;
+            text-transform: uppercase;
+            a {
+                display:block;
+                margin: 0;
+                padding:0 10px;
+                color: $whiteColor;
+                font-size: 0.857em;
+                line-height:22px;
+                border: 1px solid $defaultThemeColor;
+                border-radius:3px;
+                background-color: $defaultThemeColor;
+                &:hover {
+                    color: $defaultThemeColor;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+

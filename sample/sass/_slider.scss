@@ -1,0 +1,241 @@
+﻿/*------------------------------------------------------------------
+    Sliders styles
+-------------------------------------------------------------------*/
+
+
+.nav-color-light {
+    a.prev i.fa,
+    a.next i.fa,
+    .owl-prev i.fa,
+    .owl-next i.fa {
+        color:$whiteColor;
+    }
+}
+.nav-color-dark {
+    a.prev i.fa,
+    a.next i.fa,
+    .owl-prev i.fa,
+    .owl-next i.fa {
+        color:$darkGrayColor;
+    }
+}
+.nav-color-theme {
+    a.prev i.fa,
+    a.next i.fa,
+    .owl-prev i.fa,
+    .owl-next i.fa {
+        color:$defaultThemeColor;
+    }
+}
+
+// arrows
+a.prev,
+a.next,
+.owl-prev,
+.owl-next {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 3;
+    display: block;
+    padding: 10px;
+    @include transform(translateY(-50%));
+    i.fa {
+        line-height: 58px;
+        font-size: 2.5em;
+        color:$defaultThemeColor;
+    }
+    &:hover {
+        opacity:0.6;
+    }
+}
+a.next,
+.owl-next {
+    left: auto;
+    right: 0;
+    &:before {
+        position: relative;
+        right: -1px;
+    }
+}
+
+.blueimp-gallery > .prev {
+    left: 2%;
+}
+.blueimp-gallery > .next {
+    right: 2%;
+}
+
+.owl-prev {
+    &:before {
+        position: relative;
+        right: 1px;
+    }
+}
+
+
+.resto-slider-ondrag {
+    overflow: hidden;
+    pointer-events: none;
+    @include user-select(none);
+}
+
+// inline-multi-slider
+.inline-multi-slider {
+    position: relative;
+     .slide {
+        display: inline-block !important;
+        vertical-align: top;
+     }
+}
+
+// accordion-slider
+.accordion-slider {
+    position: relative;
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 20px;
+        visibility: visible;
+        opacity: 0;
+        cursor: -webkit-grab;
+        cursor: -moz-grab;
+        cursor: -o-grab;
+        a {
+            pointer-events: auto;
+        }
+        &.current {
+            position: relative;
+            z-index: 2;
+            visibility: visible;
+            opacity: 1;
+        }
+        &.next, 
+        &.previous {
+            @include transform(translateX(100%));
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+    .slide.previous {
+	opacity: 1;
+	visibility: visible;
+        @include transform(translateX(-100%));
+    }
+}
+
+.main-section-slider {
+    position: relative;
+    width:100%;
+    height:100%;
+    .book-slider {
+        height: 100%;
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width:100%;
+            height:100%;
+            visibility: visible;
+            opacity: 0;
+            cursor: -webkit-grab;
+            cursor: -moz-grab;
+            cursor: -o-grab;
+            cursor: default;
+            @include user-select(none);
+            &.current {
+                position: relative;
+                z-index: 2;
+                visibility: visible;
+                opacity: 1;
+            }
+            &.next,
+            &.previous {
+                opacity: 0;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+// book-slider
+.book-slider {
+    position: relative;
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        visibility: visible;
+        opacity: 0;
+        cursor: -webkit-grab;
+        cursor: -moz-grab;
+        cursor: -o-grab;
+        cursor: default;
+        @include user-select(none);
+        &.current {
+            opacity: 1;
+            position: relative;
+            visibility: visible;
+            z-index: 2;
+        }
+        &.next, &.previous {
+            opacity: 0;
+            visibility: visible;
+        }
+    }
+}
+
+.resto-slider-nextArrow,
+.resto-slider-previousArrow {
+    z-index: 3;
+}
+
+// slider-dots
+.owl-pagination,
+.slider-dots {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 0 0;
+    overflow: hidden;
+    text-align: center;
+    .owl-page,
+    li {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0px 10px;
+        list-style-type: none;
+        background-color: $defaultThemeColor;
+        border-radius:50%;
+        opacity: 0.5;
+        cursor: pointer;
+        @include transition(.5s);
+        &.active {
+            opacity: 1;
+        }
+        &:hover {
+            opacity: 1;
+            @include transition(.5s);
+        }
+    }
+}
+
+.owl-theme {
+    .owl-pagination {
+        .owl-page {
+            background-color: $defaultThemeColor;
+        }
+    }
+}
+
+.owl-light {
+    .owl-pagination {
+        .owl-page {
+            background-color: $whiteColor;
+        }
+    }
+}

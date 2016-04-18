@@ -1,0 +1,35 @@
+﻿/*------------------------------------------------------------------
+    bg effect: scale, video bg, image bg
+-------------------------------------------------------------------*/
+
+// scale effects
+@include keyframes(scale-effect) {
+  0%   {  @include transform(scale(1));}
+  50%  {  @include transform(scale(1.3));}
+  100% {  @include transform(scale(1));}
+}
+
+.bg-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index:0;
+    opacity: 0;
+    &.scale {
+        opacity:1;
+        background-position: center;
+        background-size: cover;
+        @include animation(scale-effect 80s infinite linear);
+    }
+    &.image {
+        opacity:1;
+        background-position: center;
+        background-size: cover;
+    }  
+    &.bg-video {
+        z-index:-1;
+        opacity:1;
+    }
+}

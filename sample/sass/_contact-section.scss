@@ -1,0 +1,159 @@
+﻿
+/*------------------------------------------------------------------
+    Contacts section styles
+-------------------------------------------------------------------*/
+
+    .contact-section-header {
+        margin-bottom: 15px;
+        padding:10px 20px 20px;
+        text-align: left;
+        background-color: $whiteColor;
+        .section-title {
+            color:$defaultThemeColor;
+            text-align: left;
+        }
+        .section-description{
+            margin-bottom:0;
+            text-align: left;
+        }
+        &.version-2 {
+            padding: 10px 0 20px;
+            background-color: transparent;
+            .section-title,
+            .section-description{
+                color:$whiteColor;
+            }
+        }
+    }
+    .contact-section-form {
+        .wpcf7-form-control-wrap,
+        .input-group {
+            margin-bottom: 15px;
+            border-color: $whiteColor;
+            .input-group-addon {
+                .fa {
+                    color: $whiteColor;
+                }
+                &.focus {
+                    .fa {
+                        color: $whiteColor;
+                    }
+                }
+            }
+            input:not(.btn),
+            textarea {
+                color: $whiteColor;
+                background-color: transparent;
+                &::-webkit-input-placeholder {color: $whiteColor;}
+                &:-moz-placeholder {color: $whiteColor;}
+                &::-moz-placeholder {color: $whiteColor;}
+                &:-ms-input-placeholder {color: $whiteColor;}
+                &:focus {
+                    border-color: $whiteColor ;
+                    color: $whiteColor ;
+                }
+            }
+            
+            // icon color
+            &:before {
+                color: $whiteColor;
+            }
+        }
+        input[type="submit"] {
+            position:absolute;
+            top: auto;
+            left: auto;
+            bottom: 30px;
+            right: 30px;
+            z-index:20;
+            height: 32px;
+            min-width:70px;
+            padding:0 10px 0;
+            font-weight: 400;
+            line-height:30px !important;
+            color: $whiteColor;
+            border-color: $whiteColor;
+            background-color: transparent;
+            &:hover {
+                border-color: $whiteColor;
+                color: $defaultThemeColor;
+                background-color: $whiteColor;
+            }
+        }
+    }
+    .subscribe-section-form {
+        min-height: 0 !important;
+        text-align: center;
+        border:1px solid $whiteColor;
+        .section-title {
+            color: $whiteColor;
+            margin-top: 15px;
+            font-size: 2em;
+        }
+        .subscribe-icon {
+            display:block;
+            height: 60px;
+            margin:40px auto 41px;
+            font-size: 65px;
+            color: #fff;
+
+        }
+        .wpcf7-form-control-wrap,
+        .input-group {
+            max-width: 295px;
+        }
+        form {
+            padding:0 20px;
+            input[type="submit"] {
+                position: relative;
+                right:0;
+                bottom:0;
+                z-index:20;
+                height: 32px;
+                margin-bottom: 15px;
+                min-width:70px;
+                padding:0 10px 0;
+                font-weight: 400;
+                line-height:30px !important;
+                color: $whiteColor;
+                border-color: $whiteColor;
+                background-color: transparent;
+                &:hover {
+                    border-color: $whiteColor;
+                    color: $defaultThemeColor;
+                    background-color: $whiteColor;
+                }
+            }
+            p {
+                margin: 0;
+            }
+        }
+        
+        &.version-2 {
+            background-color: $whiteColor;
+            .section-title {
+                color: $darkGrayColor;
+            }
+            .subscribe-icon {
+                color: $defaultThemeColor;
+            }
+            form {
+                input[type="submit"] {
+                    border-color: $defaultThemeColor;
+                    color: $defaultThemeColor;
+                    background-color: $whiteColor;
+                    &:hover {
+                        border-color: $whiteColor;
+                        color: $whiteColor;
+                        background-color: $defaultThemeColor;
+                    }
+                }
+            }
+        }
+
+        div.wpcf7-mail-sent-ok, 
+        div.wpcf7-validation-errors {
+            margin-top: 15px;
+            margin-left: -20px;
+        }
+    }

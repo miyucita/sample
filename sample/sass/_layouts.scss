@@ -1,0 +1,328 @@
+﻿
+/*------------------------------------------------------------------
+    Layout styles
+-------------------------------------------------------------------*/
+
+header.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    
+}
+
+// .main-theme-wrap {
+//     > .vc_row {
+//         margin-right: 0;
+//         margin-left: 0;
+//     }
+// }
+
+.vc_row {
+    margin-right: 0;
+    margin-left: 0;
+    // .container {
+    //     padding: 0;
+    // }
+}
+.vc_column_container>.vc_column-inner {
+    padding: 0;
+}
+
+
+.theme-row-carousel {
+    .row-carousel-item {
+        padding: 150px 40px 40px;
+        @include display(flex);
+        @include justify-content(center);
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        &.content-placement-top {
+            @include align-items(flex-start);
+        }
+        &.content-placement-bottom {
+            @include align-items(flex-end);
+        }
+        &.content-placement-middle {
+            @include align-items(center);
+        }
+    }
+    &.full-height-row {
+        .row-carousel-item {
+            height: 100vh;
+        }
+    }
+}
+
+
+
+
+.theme-section {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding:90px 0;
+    background-color:$whiteColor;
+    &.parallax-header {
+        background-color: transparent;
+    }
+
+    .theme-inner-content {
+        // @include display(flex);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        @include clearfix;
+    }
+    .theme-section-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        &.overlay-dark {
+            background-color: rgba(0, 0, 0, 0.7);
+            &.pattern-overlay {
+                background-color: rgba(0,0,0,0.7);
+                background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,0.7), rgba(0,0,0,0.7) 1px, transparent 1px, transparent 100%);
+                background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,0.7), rgba(0,0,0,0.7) 1px, transparent 1px, transparent 100%);
+                background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,0.7), rgba(0,0,0,0.7) 1px, transparent 1px, transparent 100%);
+                background-image: repeating-radial-gradient(center center, rgba(0,0,0,0.7), rgba(0,0,0,0.7) 1px, transparent 1px, transparent 100%);
+                -webkit-background-size: 3px 3px;
+                -moz-background-size: 3px 3px;
+                background-size: 3px 3px;
+            }
+        }
+        &.overlay-light {
+            background-color: rgba(255, 255, 255, 0.7);
+            &.pattern-overlay {
+                background-color: rgba(255,255,255,0.7);
+                background-image: -webkit-repeating-radial-gradient(center center, rgba(255,255,255,0.7), rgba(255,255,255,0.7) 1px, transparent 1px, transparent 100%);
+                background-image: -moz-repeating-radial-gradient(center center, rgba(255,255,255,0.7), rgba(255,255,255,0.7) 1px, transparent 1px, transparent 100%);
+                background-image: -ms-repeating-radial-gradient(center center, rgba(255,255,255,0.7), rgba(255,255,255,0.7) 1px, transparent 1px, transparent 100%);
+                background-image: repeating-radial-gradient(center center, rgba(255,255,255,0.7), rgba(255,255,255,0.7) 1px, transparent 1px, transparent 100%);
+                -webkit-background-size: 3px 3px;
+                -moz-background-size: 3px 3px;
+                background-size: 3px 3px;
+            }
+        }
+        &.overlay-theme {
+            background-color: rgba(189, 161, 127, 0.7);
+            &.pattern-overlay {
+                background-color: rgba(189, 161, 127, 0.7);
+                background-image: -webkit-repeating-radial-gradient(center center, rgba(189, 161, 127, 0.7), rgba(189, 161, 127, 0.7) 1px, transparent 1px, transparent 100%);
+                background-image: -moz-repeating-radial-gradient(center center, rgba(189, 161, 127, 0.7), rgba(189, 161, 127, 0.7) 1px, transparent 1px, transparent 100%);
+                background-image: -ms-repeating-radial-gradient(center center, rgba(189, 161, 127, 0.7), rgba(189, 161, 127, 0.7) 1px, transparent 1px, transparent 100%);
+                background-image: repeating-radial-gradient(center center, rgba(189, 161, 127, 0.7), rgba(189, 161, 127, 0.7) 1px, transparent 1px, transparent 100%);
+                -webkit-background-size: 3px 3px;
+                -moz-background-size: 3px 3px;
+                background-size: 3px 3px; 
+            }
+        }
+    }
+
+    // main block svg animation line
+    .main-block-svg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index:2;
+        width: 100%;
+    }
+
+    // arrow slide to bottom
+    @include keyframes(bobber) {
+        0%   {@include transform(translateY(0px));}
+        50%  {@include transform(translateY(10px));}
+        100% {@include transform(translateY(0px));}
+    }
+    .slide-to-bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 2%;
+        z-index:10;
+        display: block;
+        width: 28px;
+        margin: auto;
+        padding: 15px 0;
+        cursor: pointer;
+        @include animation(bobber 1.5s infinite);
+        a {
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        span {
+            display: block;
+            width: 28px;
+            margin: auto;
+            color: $whiteColor;
+            font-size: 2em;
+            text-align: center;
+            cursor: pointer;
+        }
+        &.slide-to-bottom-dark {
+            span {
+                color: #000;
+            }   
+        }
+    }
+}
+
+
+.line-lg {
+    margin: 10px 0;
+    opacity:0.5;
+    span {
+        display:block;
+        width: 90px;
+        height: 1px;
+        margin:0;
+        border-bottom: 1px solid $lightGrayColor;
+    }
+}
+
+
+// pagination-block
+.pagination-block {
+    text-align: center;
+    .pagination {
+        margin: 0;
+        line-height: 1;
+        > li {
+            display: inline-block;
+            margin: 0px 5px;
+            overflow: visible;
+            vertical-align: middle;
+            span,
+            a {
+                width: 20px;
+                padding: 0;
+                font-family: 'Lato', sans-serif;
+                color: $darkGrayColor;
+                line-height: 40px;
+                opacity:1;
+                border:none;
+                background-color: transparent;
+                @include transition(0.5s);
+                &.active,
+                &:hover,
+                &:focus {
+                    background-color: transparent;
+                    color: $defaultThemeColor;
+                }
+            }
+        }
+    }
+}
+
+
+// comments
+.comments { 
+    h5 {
+        margin: 40px 0 20px;
+    }
+    .comment-form {
+        textarea {
+            width: 100%;
+        }
+    }
+    .comments-list {
+        width: 100%;
+        padding: 0;
+        overflow: visible;
+        li {
+            margin: 0 0 25px;
+            list-style: none;
+            overflow: visible;
+            .comments-list-inner {
+                width: 100%;
+                box-shadow:0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+                .comments-list-head {
+                    position: relative;
+                    padding: 15px 60px;
+                    overflow: hidden;
+                    border-bottom: 1px solid $superlightGrayColor;
+                    img {
+                        float: left;
+                        max-width:60px;
+                        height: auto;
+                        margin: 0 10px 0 0;
+                    }
+                    .user-info {
+                        float: left;
+                        overflow: hidden;
+                        .comments-autor-name {
+                            margin: 0;
+                            font-family: 'Lato', sans-serif;
+                            color: $darkGrayColor;
+                            font-weight: bold;
+                        }
+                        .comment-date {
+                            display: block;
+                            color: $lightGrayColor;
+                            font-size: 0.857em;
+                            font-weight: normal;
+                        }
+                    }
+                    .comment-reply-link {
+                        position: absolute;
+                        top: 20px;
+                        right: 10px;
+                        display: block;
+                        width: 40px;
+                        overflow: hidden;
+                        font: normal 0.857em/1.8em 'Lato', sans-serif;
+                        color: $darkGrayColor;
+                        text-align: center;
+                        text-transform: uppercase;
+                        .fa {
+                            color: $lightGrayColor;
+                            font-size: 1.714em;
+                        }
+                        &:hover {
+                            opacity: 0.6;
+                        }
+                    }
+                }
+                .comment-text {
+                    color: $lightGrayColor;
+                    padding: 40px 60px;
+                }
+            }
+            .children,
+            .reply-comment {
+                margin: 25px 0;
+                padding-left: 65px;
+                li {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .comment-respond {
+        #cancel-comment-reply-link {
+            float: right;
+            color: $defaultThemeColor;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}
+.comments-navigation {
+    a {
+        color: $defaultThemeColor;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+

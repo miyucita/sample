@@ -1,0 +1,189 @@
+﻿
+/*------------------------------------------------------------------
+    Customers section styles
+-------------------------------------------------------------------*/
+
+.customers-lazy {
+    position: relative;
+    max-width:900px;
+    min-height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius:4px;
+    background-color: $whiteColor;
+    
+    .image-block {
+        float:left;
+        width:190px;
+        background-size: cover;
+        background-position: center;
+        img {
+            width:auto;
+            height:auto;
+            max-width:100%;
+            max-height:100%;
+        }
+    }
+    .description-block {
+        position: relative;
+        padding: 45px 80px 25px 240px;
+        color:$darkGrayColor;
+        text-align: left;
+        .fa {
+            position: absolute;
+            top: 33px;
+            left: 170px;
+            width: 40px;
+            height: 40px;
+            color: $whiteColor;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: $defaultThemeColor;
+        }
+        h5 {
+            margin: 0 0 5px;
+        }
+        .post{
+            display: block;
+            margin-top: 0px;
+            margin-bottom: 15px;
+            font-family: inherit;
+            color:$lightGrayColor;
+            font-weight:300;
+        }
+        p {
+            margin: 0;
+            color: $darkGrayColor;
+            font-size: 1.267em;
+            font-weight:300;
+            line-height: 1.5em;
+        }
+    }
+    
+}
+
+// style version 1
+.customers-carousel { 
+    &.version-1 {
+        .customers-lazy {
+            .description-block {
+                h5 {
+                    font-weight:500;
+                }
+                .post {
+                    display: block;
+                    color: $defaultThemeColor;
+                }
+            }
+        }
+        .owl-pagination {
+            .owl-page {
+                background-color: $whiteColor;
+            }
+        }
+    }
+}
+
+// style version 2
+.customers-carousel { 
+    &.version-2 {
+        .customers-lazy {
+            min-height: auto;
+            background-color: transparent;
+            .left-block { 
+                display: inline-block;
+                width: 20%;
+                vertical-align:middle;
+                .image-block {
+                    float: none;
+                    display:block;
+                    width:100%;
+                    overflow: hidden;
+                    border: 2px solid $whiteColor;
+                    border-radius:100%;
+                }
+            }
+            .description-block {
+                float: none;
+                display: inline-block;
+                width:79%;
+                margin-top:0;
+                padding:0 0 0 70px;
+                vertical-align:middle;
+                p {
+                    position:relative;
+                    padding:30px 70px;
+                    background-color:$whiteColor;
+                    border-radius:4px;
+                    &:after {
+                        content:"";
+                        position:absolute;
+                        left: -40px;
+                        top: 50%;
+                        margin-top: -20px;
+                        border: 20px solid transparent;
+                        border-right: 20px solid $whiteColor; 
+                    }
+                    span {
+                        display: block;
+                        margin-top: 20px;
+                        font-family: 'Lato', sans-serif;
+                        color: $darkGrayColor;
+                        text-align: left;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        .owl-pagination {
+            .owl-page {
+                background-color: $whiteColor;
+            }
+        }
+    }
+}
+// style version 3
+.customers-carousel { 
+    &.version-3 {
+        .customers-lazy {
+            border-radius: 0;
+            background-color: transparent;
+            .image-block {
+                width: 40%;
+            }
+            .description-block {
+                width: 60%;
+                float: left;
+                padding: 25px 0 60px 50px;
+                h5,
+                .post,
+                p {
+                    color: $whiteColor;
+                }
+            }
+        }
+        .owl-controls {
+            position: absolute;
+            width: 60%;
+            bottom: 0px;
+            padding-left: 50px;
+            left: 40%;
+            .owl-pagination {
+                padding: 15px 0;
+                text-align: left;
+                .owl-page {
+                    background-color: $whiteColor;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

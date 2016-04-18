@@ -1,0 +1,41 @@
+﻿
+/*------------------------------------------------------------------
+    Parralax effect styles
+-------------------------------------------------------------------*/
+
+.parallax {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.covers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    .parallax {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        background: none;
+        overflow: hidden;
+        opacity: 1;
+        .parallax-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: none;
+            min-width: 100%;
+            min-height: 100%;
+            opacity: 1;
+            @include transform(translate(-50%, -50%));
+        }
+    }
+}

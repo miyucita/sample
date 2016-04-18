@@ -1,0 +1,124 @@
+﻿/*------------------------------------------------------------------
+    Animations styles
+-------------------------------------------------------------------*/
+
+.theme-animation {
+    opacity: 0;
+    position: relative;
+    @include animation-duration(1s);
+    @include animation-fill-mode(both);
+    @include animation-play-state(paused);
+}
+
+.animateIt {
+    @include animation-play-state(running);
+}
+
+
+// animation-delay
+@for $i from 0 through 10 {
+  .animation-delay-#{$i} {
+    @include animation-delay($i*0.5s);
+  }
+}
+
+
+// fadeInUp
+@include keyframes(fadeInUp) {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, -50px, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(translate3d(0, 0, 0));
+    }
+}
+.fadeInUp {
+     @include animation-name(fadeInUp);
+}
+
+
+// fadeInDown
+@include keyframes(fadeInDown) {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, 50px, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(translate3d(0, 0, 0));
+    }
+}
+.fadeInDown {
+     @include animation-name(fadeInDown);
+}
+
+// fadeInLeft
+@include keyframes(fadeInLeft) {
+    from {
+        opacity: 0;
+        @include transform(translate3d(-50px, 0, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(translate3d(0, 0, 0));
+    }
+}
+.fadeInLeft {
+     @include animation-name(fadeInLeft);
+}
+
+// fadeInRight
+@include keyframes(fadeInRight) {
+    from {
+        opacity: 0;
+        @include transform(translate3d(50px, 0, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(translate3d(0, 0, 0));
+    }
+}
+.fadeInRight {
+     @include animation-name(fadeInRight);
+}
+
+// ZoomIn
+@include keyframes(zoomIn) {
+    from {
+        opacity: 0;
+        @include transform(scale(0.5));
+    }
+    to {
+        opacity: 1;
+        @include transform(scale(1));
+    }
+}
+.zoomIn {
+     @include animation-name(ZoomIn);
+}
+
+
+// drawLine
+@include keyframes(drawLine) {
+    0% {    
+        stroke-dasharray: 10000;
+        stroke-dashoffset: 10000;
+    }
+    100% {
+        stroke-dasharray: 10000;
+        stroke-dashoffset: 7000;
+    }
+}
+
+.drawLine {
+    opacity: 1;
+    @include animation-timing-function(ease);
+    @include animation-duration(6s);
+    @include animation-name(drawLine);
+}
+
+
+
+

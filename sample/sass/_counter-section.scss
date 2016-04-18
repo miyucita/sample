@@ -1,0 +1,65 @@
+﻿
+/*------------------------------------------------------------------
+    Counter section styles
+-------------------------------------------------------------------*/
+.counter-block {
+    display: block;
+    text-align: left;
+    div {
+        display:block;
+        padding-bottom: 20px;
+        color:$whiteColor;
+        border-bottom:1px solid rgba(255,255,255,0.5);
+        svg {
+            display: inline-block;
+            width:50px;
+            vertical-align: middle;
+        }
+        b {
+            display: inline-block;
+            font-family: "Lato", sans-serif;
+            font-size:3.333em;
+            line-height: 1em;
+            font-weight: 400;
+            vertical-align: middle;
+        }
+        i {
+            display: inline-block;
+            margin:0 5px;
+            font-size: 2em;
+            font-style: normal;
+            line-height: 1em;
+            vertical-align: bottom;
+            &.counter-icon {
+                font-size: 3em;
+            }
+        }
+    }
+    p {
+        margin:0;
+        padding-top:20px;
+        color:$whiteColor;
+        font-size:1em;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+}
+// style version 2
+.counter-block {
+    &.version-2 {
+        svg * {
+            fill: $defaultThemeColor;
+        }
+        .fa {
+            color: $defaultThemeColor;
+        }
+        div {
+            color:$defaultThemeColor;
+            border-color: $defaultThemeColor;
+        }
+        p {
+            color: $darkGrayColor;
+            padding-top: 20px;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+﻿/*------------------------------------------------------------------
+    buttons styles
+-------------------------------------------------------------------*/
+.btn,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline:none !important;
+}
+
+.btn {
+    height: 47px;
+    margin: 0px auto;
+    padding: 0 20px;
+    font-family:'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 45px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor:pointer;
+    @include transition(0.5s);
+    &.btn-sm {
+        height: 37px;
+        line-height: 35px;
+        padding:0 20px;
+    }
+}
+.btn-primary {
+    color: $whiteColor;
+    text-transform: uppercase;
+    border: 1px solid $whiteColor;
+    background:transparent;
+    &:hover,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &:focus {
+        outline:none;
+        color: $defaultThemeColor;
+        border-color:$whiteColor;
+        background-color:$whiteColor; 
+    }
+    &.inverse-btn {
+        color: $defaultThemeColor;
+        background-color:$whiteColor;
+        &:hover,
+        &:active,
+        &:active:hover,
+        &:active:focus,
+        &:focus {
+            color: $whiteColor;
+            background-color: transparent;
+        } 
+    }
+}
+
+.btn-success {
+    color: $defaultThemeColor;
+    background-color: transparent;
+    border: 1px solid $defaultThemeColor;
+    &:hover,
+    &:active,
+    &:active:hover,
+    &:active:focus,
+    &:focus {
+        outline:none;
+        background-color: $defaultThemeColor;
+        border-color: $defaultThemeColor;
+        color: $whiteColor;
+    }
+    &.inverse-btn {
+        color: $whiteColor;
+        background-color: $defaultThemeColor;
+        &:hover,
+        &:active,
+        &:active:hover,
+        &:active:focus,
+        &:focus {
+            color: $defaultThemeColor;
+            background-color: transparent;
+        } 
+    }
+}

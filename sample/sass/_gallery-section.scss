@@ -1,0 +1,76 @@
+﻿
+/*------------------------------------------------------------------
+    Gallery section styles
+-------------------------------------------------------------------*/
+
+.gallery-list {
+    margin:0 auto;
+    text-align: center;
+    a {
+        display: block;
+        float: left;
+        padding: 0;
+        overflow:hidden;
+        border:3px solid $whiteColor;
+        canvas {
+            @include transition(transform .5s);
+            @include backface-visibility(hidden);
+            @include transform(scale(1.15));
+        }
+        &:hover {
+            canvas {
+                @include transform(scale(1));
+            }
+        }
+    }
+}
+.blueimp-gallery > .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
+    margin:0 !important;
+    padding:0 !important;
+    font-size: 20px !important;
+    line-height: 18px !important;
+    color: $whiteColor;
+    outline: none;
+    border: 1px solid $defaultThemeColor;
+    text-shadow:none;
+    border-radius:50%;
+    opacity: 1;
+    i {
+        position: relative;
+        line-height: 15px;
+        &:after,
+        &:before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            display: block;
+            width: 25px;
+            height: 1px;
+            background-color: $defaultThemeColor;
+            @include transform(rotate(45deg));
+        }
+        &:after{
+            @include transform(rotate(-45deg));
+        }
+
+    }
+    &:hover  i:after,
+    &:hover  i:before{
+            background-color: $whiteColor;
+        }
+    &:hover {
+        color: $whiteColor;
+        background-color: $defaultThemeColor;
+    }   
+    @include transition(.5s);
+}
+.blueimp-gallery > .title {
+    font: 2em/1.8em "Raleway",sans-serif;
+    font-weight: 300;
+}

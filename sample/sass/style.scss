@@ -1,0 +1,129 @@
+﻿
+/*------------------------------------------------------------------
+
+Project:        Profi Html Template
+Version:        1.1
+Last change:    26/01/16
+Author:         Ion Digital 
+
+-------------------------------------------------------------------*/
+
+// mixin library for Sass
+// http://bourbon.io/docs/
+@import "../bourbon/bourbon";
+
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+	2. Header / .main-header
+		- Navigation / .navbar
+	3. Home Landing 
+		- Main Section / section.main-section
+			- parralax, video, scale / .bg-effect
+			- title / .main-section-title
+		- all section
+			- parralax, video, scale / .bg-effect
+			- h2.section-title
+			- p.section-description
+			- content
+	5. blog Page
+		- Main Section / section.main-section
+			- parralax, video, scale / .bg-effect
+			- title / .main-section-title
+		- content / .content
+			- article
+				- image / .news-img-block
+				- description / .news-description-block
+			-pagination / .pagination-block
+
+		- sidebar / #sidebar 
+			- Categories
+			- Recent Posts
+			- Popular Tags
+	5. Footer / #footer
+		- contacts
+		- services
+		- map
+-------------------------------------------------------------------*/
+
+
+
+
+
+/*------------------------------------------------------------------
+	base styles
+-------------------------------------------------------------------*/
+@import "_colors.scss";
+@import "_typography.scss";
+@import "_main.scss";
+@import "_general.scss";
+@import "_buttons.scss";
+@import "_forms.scss";
+
+/*------------------------------------------------------------------
+	general layouts
+-------------------------------------------------------------------*/
+@import "_preloader.scss";
+@import "_layouts.scss";
+@import "_slider.scss";
+@import "_modal.scss";
+@import "_parallax.scss";
+@import "_bg-effect.scss";
+@import "_animation.scss";
+
+
+/*------------------------------------------------------------------
+	header
+-------------------------------------------------------------------*/
+@import "_mainmenu.scss";
+
+
+/*------------------------------------------------------------------
+	landing sections
+-------------------------------------------------------------------*/
+@import "_main-section.scss";
+@import "_services-section.scss";
+@import "_customers-section.scss";
+@import "_products-section.scss";
+@import "_team-section.scss";
+@import "_pricing-section.scss";
+@import "_counter-section.scss";
+@import "_gallery-section.scss";
+@import "_news-section.scss";
+@import "_contact-section.scss";
+
+
+/*------------------------------------------------------------------
+	footer
+-------------------------------------------------------------------*/
+@import "_footer.scss";
+
+
+/*------------------------------------------------------------------
+	other pages
+-------------------------------------------------------------------*/
+@import "_blog-page.scss";
+
+@import "_product-page.scss";
+
+
+/*------------------------------------------------------------------
+	responsive
+-------------------------------------------------------------------*/
+// @import "responsive_lg";
+@import "responsive_md";
+@import "responsive_sm";
+@import "responsive_xs";
+
+
+
+
+
+
+
+
+
+
+

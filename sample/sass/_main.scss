@@ -1,0 +1,19 @@
+﻿/*------------------------------------------------------------------
+    Main styles
+-------------------------------------------------------------------*/
+html {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+    color: $darkGrayColor;
+    
+    @include backface-visibility(hidden);
+    &.fixfixed .mobile-menu{
+         position: absolute;
+    }
+}

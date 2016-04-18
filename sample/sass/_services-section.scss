@@ -1,0 +1,128 @@
+﻿
+/*------------------------------------------------------------------
+    Services section styles
+-------------------------------------------------------------------*/
+.services-col {
+    .services-img {
+        z-index: 10;
+        margin: 0 auto;
+        border-radius:4px;
+        @include backface-visibility(hidden);
+        @include transform(translate3d(0,0,0));
+        img,
+        canvas {
+            z-index: 0;
+            width: 100%;
+            max-width: 170px;
+            height: auto;
+            margin: auto;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    h5 {
+        letter-spacing: 1px;
+        margin: 30px 0 10px;
+    }
+    p  {
+        max-width: 300px;
+        margin: 0 auto;
+        text-transform: none;
+        color:$lightGrayColor;
+    }
+    &.scale-animation {
+        .services-img {
+           img,
+            canvas {
+                @include transition(0.5s);
+            }
+        }
+        &:hover {
+            img,
+            canvas {
+                @include transform(scale(1.05));
+            }
+        }
+    }
+    
+    // style version 1
+    &.version-1 {
+        text-align: left;
+        .services-img {
+            position: relative;
+            overflow: hidden;
+            background-color:#000;
+            img,
+            canvas { 
+                position:relative;
+                z-index:2;
+                max-width: 100%;
+                opacity:.5;
+            }
+            .fa {
+                position:absolute;
+                top:0;
+                left:0;
+                bottom:0;
+                right:0;
+                z-index:3;
+                width: 40px;
+                height:40px;
+                margin:auto;
+                font-size:3em;
+                color:$whiteColor !important;
+            }
+        }
+        h5 {
+            padding: 0 5px;
+        }
+        p {
+            margin: 0;
+            padding: 0 5px;
+        }        
+    }
+    // style version 2
+    &.version-2 {
+        text-align: center;
+        .services-img {
+            svg {
+                display: block;
+                max-width:200px;
+                margin: auto;
+                path,
+                line,
+                rect,
+                polygon {
+                    fill:$defaultThemeColor;
+                }   
+            }
+            img,
+            canvas {
+                display: block;
+                max-width:200px;
+                height:auto;
+                margin: auto;
+            }
+        }
+        h5 {
+            margin-top:10px;
+        }
+    }
+    // style version 3
+    &.version-3 {
+        margin-top: 60px;
+        border:0;
+        text-align: center;
+        .services-img {
+            i { 
+                color: $defaultThemeColor;
+                font-size:3em;
+                line-height: 1.5em;
+            }
+        }
+        h5 {
+            text-transform: uppercase;
+        }
+    }
+}
